@@ -1,0 +1,30 @@
+{
+  "name": "tut",
+  "version": "1.0.0",
+  "description": "node js tutorial by anil sidhu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anil-sidhu/node-js.git"
+  },
+  "keywords": [
+    "code",
+    "step",
+    "by",
+    "step"
+  ],
+  "author": "anil sidhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anil-sidhu/node-js/issues"
+  },
+  "homepage": "https://github.com/anil-sidhu/node-js#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "colors": "^1.4.0",
+    "simple-node-logger": "^21.8.12"
+  }
+}

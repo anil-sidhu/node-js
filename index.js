@@ -1,8 +1,3 @@
-const http = require('http');
+const chalk = require('chalk');
 
-
-http.createServer((req,resp) =>
-{
-resp.write("<h1>Code Step by step</h1>");
-resp.end();
-}).listen(4500);
+console.log(chalk.blue('Hello world!'));
