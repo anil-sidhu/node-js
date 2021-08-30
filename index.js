@@ -1,19 +1,15 @@
-const fs = require('fs');
+const fs= require('fs');
+const path=require('path');
+const dirPath= path.join(__dirname,'files');
+console.log(dirPath)
+// for(i=0;i<5;i++)
+// {
+//     fs.writeFileSync(`${dirPath}/hello${i}.txt`,"some simple text in file")
 
-const input = process.argv;
-
-if(input[2]=='add')
-{
-    fs.writeFileSync(input[3],input[4])
+// }
+fs.readdir(dirPath,(err,files)=>{
+    files.forEach((item)=>{
+        console.warn("file name is : ",item)
+    });
 }
-else if(input[2]=='remove')
-{
-    fs.unlinkSync(input[3])
-}
-else
-{
-    console.log("invalid input ")
-}
-
-
-// node index.js other red.txt 'this is color'
+)
