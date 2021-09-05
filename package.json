@@ -25,6 +25,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "colors": "^1.4.0",
+    "express": "^4.17.1",
     "simple-node-logger": "^21.8.12"
   }
 }

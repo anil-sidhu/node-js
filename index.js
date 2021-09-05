@@ -1,11 +1,17 @@
-console.log("starting up")
+const express = require('express');
+const app = express();
 
-setTimeout(()=>{
-console.log("2 second wait")
-},2000);
+app.get("", (req, resp) => {
+    resp.send("Welcome, This is a Home Page");
+});
 
-setTimeout(()=>{
-    console.log("0 second wait")
-    },0);
+app.get("/about", (req, resp) => {
+    resp.send("Welcome, This is a About Page");
+});
 
-console.log("finishing up")
+app.get("/help", (req, resp) => {
+    resp.send("Welcome, This is a Help Page");
+});
+
+
+app.listen(5000);
