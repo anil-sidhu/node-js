@@ -4,9 +4,19 @@ const path = require('path');
 const app = express();
 const publicPath=path.join(__dirname,'public')
 
-// app.use(express.static(publicPath));
+app.set('view engine','ejs');
+
 app.get('',(_,resp)=>{
     resp.sendFile(`${publicPath}/index.html`)
+});
+
+app.get('/profile',(_,resp)=>{
+    const user={
+        name:'Peter',
+        email:'peter@test.com',
+        country:'USA'
+    }
+   resp.render('profile',{user})
 });
 
 app.get('/contact',(_,resp)=>{
