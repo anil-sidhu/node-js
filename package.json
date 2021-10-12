@@ -28,6 +28,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mongodb": "^4.1.2",
+    "mongoose": "^6.0.10",
     "simple-node-logger": "^21.8.12"
   }
 }
