@@ -2,41 +2,46 @@ const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/e-comm');
 const productSchema = new mongoose.Schema({
-   name: String,
-   price: Number,
+    name: String,
+    price: Number,
+    brand: String,
+    category: String
 
 });
 
-const main = async () => {
-   const Product = mongoose.model('products', productSchema);
-   let data = new Product({ name: "max 131", price: 200, brand: 'xyz' });
-   const result = await data.save;
-   console.log(result);
+const saveInDB = async () => {
+    const Product = mongoose.model('products', productSchema);
+    let data = new Product({
+        name: "max 100",
+        price: 200,
+        brand: 'maxx',
+        category: 'Mobile'
+    });
+    const result = await data.save();
+    console.log(result);
 }
 
-const update = async () => {
-   const Product = mongoose.model('products', productSchema);
-   let data = await Product.updateOne(
-      { name: 'max pro' },
-      {
-         $set: { name: 'max pro 2', price: 1000 }
-      });
-   console.log(data);
+const updateInDB =async  () => {
+    const Product = mongoose.model('products', productSchema);
+    let data =await  Product.updateOne(
+        { name: "max 6" },
+        {
+            $set: { price: 550,name:'max pro 6' }
+        }
+    )
+    console.log(data)
 }
 
-const deleteData = async () => {
-   const Product = mongoose.model('products', productSchema);
-   let data = await Product.deleteOne(
-      { name: 'm' }
-      );
-   console.log(data);
+const deleteInDB = async ()=>{
+    const Product = mongoose.model('products', productSchema);
+    let data = await Product.deleteOne({name:'max 100'})
+    console.log(data);
+}
+const findInDB = async ()=>{
+    const Product = mongoose.model('products', productSchema);
+    let data = await Product.find({name:'max pro 611'})
+    console.log(data);
 }
 
-const findData = async () => {
-   const Product = mongoose.model('products', productSchema);
-   let data = await Product.find();
-   console.log(data);
-}
- 
- 
-findData();
+findInDB();
+
